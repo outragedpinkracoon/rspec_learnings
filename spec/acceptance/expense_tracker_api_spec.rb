@@ -1,7 +1,7 @@
 require 'rack/test'
 require 'json'
 
-require_relative '../app/api'
+require_relative '../../app/api'
 
 module ExpenseTracker
   RSpec.describe 'Expense Tracker API' do
@@ -19,7 +19,7 @@ module ExpenseTracker
       ExpenseTracker::API.new
     end
 
-    it 'records submitted expenses' do
+    xit 'records submitted expenses' do
       pending 'Needs persistence'
       coffee = post_expense(
         'payee' => 'Starbucks',
