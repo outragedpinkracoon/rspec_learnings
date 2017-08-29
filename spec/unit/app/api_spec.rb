@@ -11,11 +11,7 @@ module ExpenseTracker
       context 'when expenses exist on the given date' do
         let(:date) { '2017-04-10' }
         let(:expected_result) do
-          JSON.generate(
-            'payee' => 'Starbucks',
-            'amount' => 5.75,
-            'date' => '2017-04-10'
-          )
+          ['expense-1', 'expense-2']
         end
 
         before do
@@ -37,9 +33,7 @@ module ExpenseTracker
 
       context 'when there are no expenses on the given date' do
         let(:date) { '2017-04-11' }
-        let(:expected_result) do
-          JSON.generate []
-        end
+        let(:expected_result) { [] }
 
         before do
           allow(ledger).to receive(:expenses_on)
